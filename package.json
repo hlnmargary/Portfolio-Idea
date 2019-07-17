@@ -1,7 +1,6 @@
 {
   "name": "testportfoliopaule",
   "version": "1.0.0",
-  "description": "",
   "main": "script.js",
   "scripts": {
     "dev": "parcel index.html",
@@ -11,5 +10,15 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.22.5"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hlnmargary/Portfolio-Idea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hlnmargary/Portfolio-Idea/issues"
+  },
+  "homepage": "https://github.com/hlnmargary/Portfolio-Idea#readme",
+  "description": ""
 }

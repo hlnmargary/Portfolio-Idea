@@ -1,21 +1,72 @@
 @import'./font.scss';
 
+@keyframes scale-up-ver-center {
+  0% {
+    -webkit-transform: scaleY(0.2);
+            transform: scaleY(0.2);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes lineScale{
+  0% {
+            transform: scaleX(0.2);
+  }
+  100% {
+            transform: scaleX(1), translateX(50px);
+  }
+}
+
+@-webkit-keyframes flip-out-hor-top {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(70deg);
+            transform: rotateX(70deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes flip-in-hor-top {
+  0% {
+    -webkit-transform: rotateX(-80deg);
+            transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+    opacity: 1;
+  }
+}
 
 body{
   height: 300vh;
+  font-family: 'Rajdhani';
+  position: relative;
 }
 header {
-  height: 60px;
+  height: 80px;
   width: 100vw;
+  top: 0;
   position: fixed;
+  z-index: 99;
+  background-color: white;
 }
 .logoContainer {
   position: absolute;
   transform: translate(20px, 20px);
+  
 }
 .burgerMenu {
   width: 60px;
-  height: 26px;
+  height: 26px; 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -26,5 +77,150 @@ header {
     height: 2px;
     width: 100%;
     background-color: black;
+  }
+  &:hover{
+    .burgerMenuOpen {
+      width: 80px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      transition: all  0.25s ease;
+    }
+  }
+}
+
+.scrollButton {
+  position: fixed;
+  bottom: 80px;
+  left: 40px;
+}
+
+.projectSection {
+  margin-top: 100px;
+  &:hover{
+    .line{
+      animation: lineScale 1s ease both;
+    }
+    .imgContainer{
+      opacity: 1;
+      animation: scale-up-ver-center 0.25s ease both;
+      filter: opacity(0.6);
+      z-index: 0;
+    }
+    .infosContainer{
+      position: absolute;
+      opacity: 1;
+      z-index: 10;
+      transition: opacity 1s;
+    }
+    .projectTitle{
+      animation: flip-out-hor-top 0.5s ease 0.2s both;
+    }
+    .projectContent{
+      animation: flip-in-hor-top 1.5s ease-out 0.2s both;
+    }
+    .discoverContainer {
+      opacity: 1;
+      transition: opacity 1s;
+    }
+  }
+  .projectTitle{
+    position: absolute;
+    right: 100px;
+    width: 50%;
+    opacity: 1;
+    z-index: 3;
+    h1 {
+      font-size: 60px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+  .projectContent{
+    opacity: 0;
+    position: absolute;
+    width: 55%;
+    height: auto;
+    right: 15%;
+    z-index: 30;
+
+    p{
+      font-size: 18px;
+      font-weight: 400;
+      margin: 60px 80px;
+    }
+  }
+  width: 80vw;
+  transform: translate(10%, 90px);
+  height: 30vh;
+  position: relative;
+  .imgContainer{
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    right: 15%;
+    opacity: 0;
+    background-position-y: center;
+    &__1{
+      background-image: url(/assets/img/newyork.jpg);
+    }
+    &__2{
+      background-image: url(/assets/img/paris.jpg);
+    }
+    &__3{
+      background-image: url(/assets/img/rio.jpeg);
+    }
+  }
+  .infosContainer{
+    position: absolute;
+    opacity: 0;
+    width: 400px;
+    padding-left: 10%;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    .infos{
+      .beforeLine, .afterLine{
+        display: flex;
+        width: 100%;
+        position: relative;
+        .role {
+          font-weight: 600;
+        }
+      }
+      .date{
+        left: 250px;
+        position: absolute;
+      }
+      .afterLine{
+        .technos{
+          line-height: 80%;
+        }
+      }
+    }
+    .line{
+      width: 60%;
+      top: 50%;
+      transform: translateY(-50%);
+      transform: translateX(40px);
+      height: 1px;
+      background-color: black;
+    }
+  }
+
+}
+
+.discoverContainer{
+  width: 100px;
+  position: absolute;
+  right:0;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  img{
+    width: 60px;
+  }
+  p{
+    font-size: 11px;
   }
 }
