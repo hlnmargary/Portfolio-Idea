@@ -1,0 +1,30 @@
+body {
+  height: 300vh;
+}
+
+header {
+  height: 60px;
+  width: 100vw;
+  position: fixed;
+}
+
+.logoContainer {
+  position: absolute;
+  transform: translate(20px, 20px);
+}
+
+.burgerMenu {
+  width: 60px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 20px;
+}
+.burgerMenu div {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+}
