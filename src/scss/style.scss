@@ -1,4 +1,5 @@
 @import'./font.scss';
+@import'./menu.scss';
 
 @keyframes scale-up-ver-center {
   0% {
@@ -48,6 +49,7 @@
 
 body{
   height: 300vh;
+  width: 100vw;
   font-family: 'Rajdhani';
   position: relative;
 }
@@ -62,22 +64,28 @@ header {
 .logoContainer {
   position: absolute;
   transform: translate(20px, 20px);
-  
 }
 .burgerMenu {
   width: 60px;
   height: 26px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   margin-left: 50%;
   transform: translateX(-50%);
   margin-top: 20px;
-  div {
-    height: 2px;
+  a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 100%;
-    background-color: black;
+    height: 100%;
+    div{
+      height: 2px;
+      width: 100%;
+      background-color: black;
+      text-decoration-line: none;
+      color: black;
+    }
   }
+  
   &:hover{
     .burgerMenuOpen {
       width: 80px;
@@ -121,6 +129,8 @@ header {
     .discoverContainer {
       opacity: 1;
       transition: opacity 1s;
+      text-decoration-line: none;
+      color: black;
     }
   }
   .projectTitle{

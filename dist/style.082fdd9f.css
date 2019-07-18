@@ -47,6 +47,21 @@
   src: local("Rajdhani Bold"), local("Rajdhani-Bold"), url("rajdhani-v8-latin-700.5c7bcffc.eot?#iefix") format("embedded-opentype"), url("rajdhani-v8-latin-700.e427e9e9.woff2") format("woff2"), url("rajdhani-v8-latin-700.9b46fd89.woff") format("woff"), url("rajdhani-v8-latin-700.a9eaf502.ttf") format("truetype"), url("rajdhani-v8-latin-700.f876bbe0.svg#Rajdhani") format("svg");
   /* Legacy iOS */
 }
+.menuSection {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 180px;
+}
+.menuSection a {
+  text-decoration-line: none;
+  color: black;
+  justify-content: center;
+}
+.menuSection a h2 {
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
 @keyframes scale-up-ver-center {
   0% {
     -webkit-transform: scaleY(0.2);
@@ -91,6 +106,7 @@
 }
 body {
   height: 300vh;
+  width: 100vw;
   font-family: "Rajdhani";
   position: relative;
 }
@@ -112,17 +128,23 @@ header {
 .burgerMenu {
   width: 60px;
   height: 26px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   margin-left: 50%;
   transform: translateX(-50%);
   margin-top: 20px;
 }
-.burgerMenu div {
+.burgerMenu a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+.burgerMenu a div {
   height: 2px;
   width: 100%;
   background-color: black;
+  text-decoration-line: none;
+  color: black;
 }
 .burgerMenu:hover .burgerMenuOpen {
   width: 80px;
@@ -168,6 +190,8 @@ header {
 .projectSection:hover .discoverContainer {
   opacity: 1;
   transition: opacity 1s;
+  text-decoration-line: none;
+  color: black;
 }
 .projectSection .projectTitle {
   position: absolute;
